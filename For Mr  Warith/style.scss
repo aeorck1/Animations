@@ -90,7 +90,7 @@ body {
     position: relative;
     animation-name: rotate;
     animation-duration: 1500ms;
-    animation-iteration-count: infinite;
+    // animation-iteration-count: infinite;
 animation-timing-function: ease;
     .lines{
         position: absolute;
@@ -146,4 +146,63 @@ animation-timing-function: ease;
     100%{
         transform: rotate(0deg);
     }
+}
+
+.rolling{
+  width: 100%;
+  background-color: rgb(36, 8, 8);
+  padding: 30px;
+  .container_circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    // background-color: rgb(126, 126, 3);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate infinite  .6s forwards ;
+    .circle{
+      width: 100px;
+      height: 100px;
+    //  border: 1px solid red;
+     border-radius: 50%;
+      z-index: 1;
+    }
+    .barrels{
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: aliceblue;
+      border-radius: 50%;
+      &:nth-child(1){
+        top: 50px ;
+        left: 50px;
+      }
+
+      &:nth-child(2){
+        top: 50px;
+        right: 50px;
+      }
+      &:nth-child(3){
+        bottom: 50px;
+        right: 50px;
+      }
+      &:nth-child(4){
+      bottom: 50px;
+      left: 50px;
+      }
+    }
+
+   
+  }
+}
+
+@keyframes rotate {
+  from{
+    transform: rotate(180deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }
